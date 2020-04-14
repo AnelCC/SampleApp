@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {SafeAreaView, View, Text, StatusBar} from 'react-native';
+import {StyleSheet, SafeAreaView, View, Text, StatusBar} from 'react-native';
 
 const App: () => React$Node = () => {
   return (
@@ -15,13 +15,29 @@ const App: () => React$Node = () => {
       <StatusBar hidden={true} />
       <SafeAreaView>
         <View>
-          <Text>Anel</Text>
-          <Text>Howard</Text>
-          <Text>Eunice</Text>
+          <Text style={styles.defaultText}>Anel</Text>
+          <Text style={[styles.defaultText, styles.selectedText]}>Howard</Text>
+          <Text style={styles.defaultText}>Eunice</Text>
         </View>
       </SafeAreaView>
     </>
   );
 };
+
+/*Create a style: for implement we should apply in the component */
+const styles = StyleSheet.create({
+  defaultText: {
+    fontSize: 22,
+    padding: 10,
+    margin: 5,
+    borderWidth: StyleSheet.hairLineWith,
+    color: 'black',
+  },
+  selectedText: {
+    backgroundColor: 'yellow',
+    color: 'blue',
+    fontWeight: 'bold',
+  },
+});
 
 export default App;
