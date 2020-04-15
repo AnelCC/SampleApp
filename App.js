@@ -14,7 +14,7 @@ const App: () => React$Node = () => {
     <>
       <StatusBar hidden={true} />
       <SafeAreaView>
-        <View>
+        <View style={styles.container}>
           <Text style={styles.defaultText}>Anel</Text>
           <Text style={[styles.defaultText, styles.selectedText]}>Howard</Text>
           <Text style={styles.defaultText}>Eunice</Text>
@@ -24,9 +24,21 @@ const App: () => React$Node = () => {
   );
 };
 
-/*Create a style: for implement we should apply in the component */
+/**Create a style: for implement we should apply in the component
+ * justifyContent::: flex-start, flex-end, center, space-between, space-around
+ * alignSelf:::: stretch, flex-end
+ * flex: 1 doesn't working ---> height: '100%'
+ **/
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,    
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    backgroundColor: '#DDD',
+  },
   defaultText: {
+    textAlign: 'center',
     fontSize: 22,
     padding: 10,
     margin: 5,
@@ -34,6 +46,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   selectedText: {
+    alignSelf: 'flex-end',
     backgroundColor: 'yellow',
     color: 'blue',
     fontWeight: 'bold',
