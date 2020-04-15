@@ -1,9 +1,8 @@
 # SampleApp
 ### ReactNatve
-This repository contains simple Componentes and style implementation
+This repository contains simple app with Componentes and style implementation. Simple example.
 
 ### Native Components
-
 1. Introduction to native components: Bar Status <a href="https://reactnative.dev/docs/statusbar">Click here!</a>
 2. Create style sheets and apply in a Text component <a href="https://reactnative.dev/docs/text#__docusaurus">Click here!</a>
 3. Understand flexbox  <a href="https://reactnative.dev/docs/flexbox">Click here!</a>
@@ -11,7 +10,6 @@ This repository contains simple Componentes and style implementation
 
 
 ### Setup React Native
-
 0. Native Modules Setup: Android  <a href="https://medium.com/swlh/react-native-and-android-studio-everything-you-need-to-get-started-in-linux-b47154e78f9e">Click here!</a> iOS  <a href="https://nandovieira.com/setting-up-react-native-on-macos-mojavee">Click here!</a>
 
 ### Preview 🎉
