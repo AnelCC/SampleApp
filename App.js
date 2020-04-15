@@ -7,7 +7,16 @@
  */
 
 import React from 'react';
-import {StyleSheet, SafeAreaView, View, Text, StatusBar} from 'react-native';
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  Text,
+  StatusBar,
+  Image,
+} from 'react-native';
+//import { IMAGENAME , IMG} from '../man.png';
+//import  IMG2 = require('../man.png');
 
 const App: () => React$Node = () => {
   return (
@@ -15,9 +24,23 @@ const App: () => React$Node = () => {
       <StatusBar hidden={true} />
       <SafeAreaView>
         <View style={styles.container}>
-          <Text style={styles.defaultText}>Anel</Text>
-          <Text style={[styles.defaultText, styles.selectedText]}>Howard</Text>
-          <Text style={styles.defaultText}>Eunice</Text>
+          <Text style={styles.defaultText}>
+            Anel
+            <Image style={styles.image} source={require('./img/woman_1.png')} />
+          </Text>
+          <Text style={[styles.defaultText, styles.selectedText]}>
+            Howard
+            <Image style={styles.images} source={require('./img/man.png')} />
+          </Text>
+          <Text style={styles.defaultText}>
+            Eunice
+            <View style={styles.imageContainer}>
+              <Image
+                style={styles.image}
+                source={require('./img/woman_2.png')}
+              />
+            </View>
+          </Text>
         </View>
       </SafeAreaView>
     </>
@@ -27,15 +50,18 @@ const App: () => React$Node = () => {
 /**Create a style: for implement we should apply in the component
  * justifyContent::: flex-start, flex-end, center, space-between, space-around
  * alignSelf:::: stretch, flex-end
- * flex: 1 doesn't working ---> height: '100%'
+ * flex: 1 doesn't working
  **/
 const styles = StyleSheet.create({
   container: {
-    flex: 1,    
+    height: '100%',
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
     backgroundColor: '#DDD',
+  },
+  imageContainer: {
+    height: '30%',
   },
   defaultText: {
     textAlign: 'center',
@@ -50,6 +76,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     color: 'blue',
     fontWeight: 'bold',
+  },
+  image: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+  },
+  images: {
+    width: 100,
+    height: 100,
+    resizeMode: 'repeat',
   },
 });
 
